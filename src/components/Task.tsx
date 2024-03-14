@@ -4,15 +4,10 @@ import { Task } from "@prisma/client";
 import { Checkbox } from "./ui/checkbox";
 import { Button } from "./ui/button";
 import { Trash } from "lucide-react";
-import { useRef, useState } from "react";
 import clsx from "clsx";
 import EditTask from "./EditTask";
 
 const TaskItem = ({ task }: { task: Task }) => {
-  const editingRef = useRef<HTMLInputElement>(null);
-  // const editingRef = useRef<HTMLTextAreaElement>(null)
-  // const updateTaskWithId = updateTask.bind(null, task.id);
-
   return (
     <li className="flex items-start gap-4">
       <Checkbox
