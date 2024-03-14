@@ -140,13 +140,10 @@ export const updateTask = async (id: string, formData: FormData) => {
   }
 };
 
-export const updateTaskStatus = async (id: string) => {
+export const updateTaskStatus = async (id: string, projectId: string) => {
   const currentStatus = await prisma.task.findUnique({ where: { id } });
   const completed = !currentStatus?.completed;
 
-  const project = await prisma.project.findFirst({
-    where: { tasks: { some: { id } } },
-  });
   await prisma.task.update({
     where: {
       id,
@@ -155,23 +152,16 @@ export const updateTaskStatus = async (id: string) => {
       completed,
     },
   });
-  if (project) {
-    revalidatePath(`/projects/${project.id}`);
-  }
+  revalidatePath(`/projects/${projectId}`);
 };
 
-export const deleteTask = async (id: string) => {
-  const project = await prisma.project.findFirst({
-    where: { tasks: { some: { id } } },
-  });
+export const deleteTask = async (id: string, projectId: string) => {
   await prisma.task.delete({
     where: {
       id,
     },
   });
-  if (project) {
-    revalidatePath(`/projects/${project.id}`);
-  }
+  revalidatePath(`/projects/${projectId}`);
 };
 
 export const getAllTaskByProjectId = async (projectId: string) => {

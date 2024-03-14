@@ -7,12 +7,12 @@ import { Trash } from "lucide-react";
 import clsx from "clsx";
 import EditTask from "./EditTask";
 
-const TaskItem = ({ task }: { task: Task }) => {
+const TaskItem = ({ task, projectId }: { task: Task; projectId: string }) => {
   return (
     <li className="flex items-start gap-4">
       <Checkbox
         className={clsx("mt-2", task.completed && "opacity-50")}
-        onClick={async () => await updateTaskStatus(task.id)}
+        onClick={async () => await updateTaskStatus(task.id, projectId)}
         defaultChecked={task.completed}
         id={`${task.id}`}
       />
@@ -21,7 +21,7 @@ const TaskItem = ({ task }: { task: Task }) => {
         <EditTask task={task} />
         <Button
           aria-label="Delete task"
-          onClick={async () => await deleteTask(task.id)}
+          onClick={async () => await deleteTask(task.id, projectId)}
           variant="link"
           size="icon"
         >
