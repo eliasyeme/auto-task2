@@ -1,10 +1,16 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { auth } from "@clerk/nextjs";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default function Home() {
+  const { userId } = auth();
+  if (userId) {
+    redirect("/projects");
+  }
+
   return (
     <div className="container">
       <MaxWidthWrapper>

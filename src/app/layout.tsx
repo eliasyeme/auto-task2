@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ClerkProvider } from "@clerk/nextjs";
+import "./globals.css";
+import NavBar from "@/components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,14 +18,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={cn("relative h-full font-sans antialiased", inter.className)}
-      >
-        <main className="relative flex min-h-screen flex-col">
-          <div className="flex-1 flex-grow">{children}</div>
-        </main>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={cn(
+            "relative h-screen w-screen font-sans antialiased",
+            inter.className,
+          )}
+        >
+          <div>
+            <nav>
+              <NavBar />
+            </nav>
+            <main className="relative flex h-full flex-col">
+              <div className="flex-1 flex-grow">{children}</div>
+            </main>
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
