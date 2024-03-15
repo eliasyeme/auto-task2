@@ -8,7 +8,7 @@ const TodoList = async ({ id }: { id: string }) => {
     <ScrollArea className="h-full">
       <ul className="flex flex-col gap-y-2">
         {tasks?.map((task) => (
-          <TaskItem projectId={id} task={task} key={task.content} />
+          <TaskItem projectId={id} task={task} key={task.id} />
         ))}
       </ul>
     </ScrollArea>
