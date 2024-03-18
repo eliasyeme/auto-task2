@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Auto task
+## Introduction
+Autotask is a powerful and versatile task management application designed to streamline your workflow and boost productivity. It offers a unique combination of features:
 
-## Getting Started
+- **Project Creation**: Organize your tasks by creating dedicated projects for different goals or areas of focus.
+- **Task Management**: Add detailed tasks within each project, including descriptions, deadlines, and priority levels.
+- **AI-powered Task Generation**: Leverage the power of Google's Gemini Pro AI model to automatically generate a task list based on your specific goals. This feature saves you time and ensures you're on the right track to achieve your objectives.
+- **Modern Tech Stack**: Built with cutting-edge technologies like Next.js 14, Bun runtime, Vercel hosting, Clerk authentication, Tailwind CSS and Shaden UI for styling, Turbolinks for navigation, Turso database, and Prisma ORM for seamless data interaction.
 
-First, run the development server:
+---
+[Checkout Auto Task](http://auto-task2.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[Blog](http://auto-task2.vercel.app)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[Linkedin](https://www.linkedin.com/in/elias-yemataw/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation
+### Prerequisites:
+- Bun (or Node.js)  installed on your system. You can download them from https://bun.sh
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Steps:
+1. Clone the repository
+    ```bash
+    git clone https://github.com/eliasyeme/auto-task2.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd auto-task2
+    ```
+3. Install dependencies:
+    ```bash
+    bun install
+    ```
+4. Setup .env.local
+    ```env
+    NEXT_PUBLIC_TURSO_URL=
+    NEXT_PUBLIC_AUTH_TOKEN=
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+    CLERK_SECRET_KEY=
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+    NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+    NEXT_PUBLIC_GOOGLE_API_KEY=
+    ```
 
-## Learn More
+## Usage
+1. Start the development server:
+    ```bash
+    bun dev
+    ```
+    This will launch the application at http://localhost:3000 (default port) in your browser.
+2. Create an account using Clerk authentication.
+3. Start creating projects and adding tasks! You can also leverage the AI-powered task generation feature to get started quickly.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
+We welcome contributions from the community! If you'd like to contribute, please follow these steps:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them to your branch.
+4. Open a pull request from your branch to the main branch of the repository.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Please ensure your code adheres to the project's style guidelines and formatting conventions.
