@@ -61,3 +61,17 @@ We welcome contributions from the community! If you'd like to contribute, please
 4. Open a pull request from your branch to the main branch of the repository.
 
 Please ensure your code adheres to the project's style guidelines and formatting conventions.
+
+## Screenshots
+
+![alt text](screenshots/landing.png)
+
+![alt text](screenshots/sign-in.png)
+
+![alt text](screenshots/sign-up.png)
+
+![alt text](screenshots/no-projects.png)
+
+![alt text](screenshots/projects.png)
+
+![alt text](screenshots/tasks.png)
