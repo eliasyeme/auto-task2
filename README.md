@@ -10,7 +10,7 @@ Autotask is a powerful and versatile task management application designed to str
 ---
 [Checkout Auto Task](http://auto-task2.vercel.app)
 
-[Blog](http://auto-task2.vercel.app)
+[Blog](https://dev.to/eliasyeme/from-to-do-list-chaos-to-ai-powered-productivity-my-journey-building-autotask-3lme)
 
 [Linkedin](https://www.linkedin.com/in/elias-yemataw/)
 
